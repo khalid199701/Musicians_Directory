@@ -21,5 +21,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home, name="homepage"),
     path('musician/', include('musician.urls'), name=''),
+    # path('login/', views.user_login, name='login'),
+    path('login/', views.UserLogin.as_view(), name='login'),
+    path('user_logout/', views.UserLogoutView.as_view(), name='user_logout'),
     path('album/', include('album.urls'), name=''),
 ]
